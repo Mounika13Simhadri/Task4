@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task4</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="index.js"></script>
+</head>
+<body>
+    <form id="form1">
+        
+        <div class="steps">
+            <div class="lst">
+                <button class="circle1" id="circle1" onclick="s1(event)">1</button><label class="l1"><h4>STEP 1</h4><br>YOUR INFO<br><br><br><br></label>
+                <button class="circle2" id="circle2" onclick="s2(event)">2</button><label class="l2"><h4>STEP 2</h4><br>SELECT PLAN<br><br><br><br></label>
+                <button class="circle3" id="circle3" onclick="s3(event)">3</button><label class="l3"><h4>STEP 3</h4><br>ADD-ONS<br><br><br><br></label>
+                <button class="circle4" id="circle4" onclick="s4(event)">4</button><label class="l4"><h4>STEP 4</h4><br>SUMMARY<br><br><br><br></label>
+            </div>
+        </div>
+
+        <div class="step1" id="step1">
+                <h1>Personal info</h1>
+                <h5>Please provide your name,email address, and phone number.</h5>
+                <br>
+                <br>
+                <br>
+                <h2>Name</h2>
+                <input type="text" name="name" id="txt1" placeholder="e.g. Stephen King">
+                <br>
+                <br>
+                <h2>Email Address</h2>
+                <input type="text" name="email" id="txt2" placeholder="e.g. stephenKing@lorem.com">
+                <br>
+                <br>
+                <h2>Phone Number</h2>
+                <input type="text" name="phone" id="txt3" placeholder="e.g. +1 234 567 890">
+                <br>
+                <br>
+                <button class="nb" id="nb1" onclick="validate1(event)">Next Step</button>
+        </div>
+        
+
+        <div class="step2" id="step2">
+            <h1>Select your plan</h1>
+            <h6>You have the option of monthly or yearly billing</h6>
+            <br>
+            <br>
+            <div class="m2onthly" id="m2">
+            <button class="b" id="bm21"><img src="images/game1.jpg"><br><br><b>Arcade<input type="checkbox" id="m21"  onchange="calculate1(event)"></b><h6>$9/mo</h6></button>
+            <button class="b" id="bm22"><img src="images/game2.png"><br><br><b></b>Advanced<input type="checkbox" id="m22"  onchange="calculate1(event)"></b><h6>$12/mo</h6></button>
+            <button class="b" id="bm23"><img src="images/game3.jpg"><br><br><b></b>Pro<input type="checkbox" id="m23"  onchange="calculate1(event)"></b><h6>$15/mo</h6></button>
+            </div>
+            <div class="y2early" id="y2">
+                <button class="b" id="by21"><img src="images/game1.jpg"><br><br><b>Arcade<input type="checkbox" id="y21"  onchange="calculate1(event)"></b><h6>$90/yr</h6><h5>2months free</h5></button>
+                <button class="b" id="by22"><img src="images/game2.png"><br><br><b></b>Advanced<input type="checkbox" id="y22"  onchange="calculate1(event)"></b><h6>$120/yr</h6><h5>2months free</h5></button>
+                <button class="b" id="by23" ><img src="images/game3.jpg"><br><br><b></b>Pro<input type="checkbox" id="y23"  onchange="calculate1(event)"></b><h6>$150/yr</h6><h5>2months free</h5></button>
+                </div>
+            <br><br><br>
+            <div class="toggle">
+                <h4>&nbsp;&nbsp;&nbsp;&nbsp;Monthly&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button id="t1"></button><button id="t22" onclick="ysecond(event)"></button><button id="t23" onclick="msecond(event)"></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yearly</h4>
+            </div>
+            
+              
+            <button class="pb" id="pb2" onclick="s1(event)">Go Back</button>
+            <button class="nb" id="nb2" onclick="validate2(event)">Next Step</button>
+        </div>
+       
+
+        <div class="step3" id="step3">
+            <h1>Pick add-ons</h1>
+            <h6>Add-ons help enhance your gaming experience</h6>
+            <br>
+            <br>
+            <div class="m3onthly" id="m3">
+                <button class="b3" id="bm31"><input type="checkbox" id="mos" name="os" onchange="calculate2(event)"> Online Services&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<small>+$1/mo</small><br><h6>Access to multiplayer games</h6><br></button>
+                <button class="b3" id="bm32"><input type="checkbox" id="mls" name="ls" onchange="calculate2(event)">Large storage&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<small>+$2/mo</small><br><h6>Extra 1TB of cloud save</h6><br></button>
+                <button class="b3" id="bm33"><input type="checkbox" id="mcp" name="cp" onchange="calculate2(event)"> Customizable profile<small>+$2/mo</small><br><h6>custom theme on your profile</h6><br></button>
+                
+            </div>
+            <div class="y3early" id="y3">
+                <button class="b3" id="by31" ><input type="checkbox" id="yos" name="os" onchange="calculate2(event)"> Online Services&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<small>+$10/yr</small><br><h6>Access to multiplayer games</h6><br></button>
+                <button class="b3" id="by32" ><input type="checkbox" id="yls" name="ls" onchange="calculate2(event)">Large storage&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<small>+$20/yr</small><br><h6>Extra 1TB of cloud save</h6><br></button>
+                <button class="b3" id="by33" ><input type="checkbox" id="ycp" name="cp" onchange="calculate2(event)"> Customizable profile<small>+$20/yr</small><br><h6>custom theme on your profile</h6><br></button>
+                
+            </div>
+            
+            <div class="toggle">
+                <h4>&nbsp;&nbsp;&nbsp;&nbsp;Monthly&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button id="t1"></button><button id="t32" onclick="ythird(event)"></button><button id="t33" onclick="mthird(event)"></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yearly</h4>
+            </div>
+           
+            <button class="pb" id="pb3" onclick="s2(event)">Go Back</button>
+            <button class="nb" id="nb3" onclick="validate3(event)">Next Step</button>
+        </div>
+
+        <div class="step4" id="step4">
+            <h1>Finishing up</h1>
+            <h6>Double-check everything looks OK before confirming.</h6>
+            <br>
+            <div class="mdetails" id="mdetails">
+                <p id="p1">
+                    <input type="text" id="l1" value=""><input type="text" id="r1" value="">
+                </p>
+        
+                <br>
+                <hr>
+                <p id="p2">
+                    <input type="text" id="l2" value=""><input type="text" id="r2" value="">
+                </p>
+                <p id="p3">
+                    <input type="text" id="l3" value=""><input type="text" id="r3" value="">
+                </p>
+            
+                <p id="p4">
+                    <input type="text" id="l4" value=""><input type="text" id="r4" value="">
+                </p>
+                <br>
+                <br>
+                <br>
+                <br>
+                <h3>Total(per month)&nbsp;&nbsp;&nbsp;&nbsp;<h5><input type="text" id="total"></h5></h3>
+            </div>
+           
+            
+            <button class="pb" id="pb4" onclick="s3(event)">Go Back</button>
+            <button id="nbc" onclick="s5(event)">Confirm</button>
+        </div>
+
+        <div class="step5" id="step5">
+            <img src="images/thankyou.jpg"  width="70px" height="70px">
+            <h1>Thank You!</h1>
+            <p>Thanks for confirming your subscription!We hope you have fun using our platform.
+                If you ever need support, please feel free to email us at support@loremgaming.com
+            </p>
+        </div>
+    </form>
+
+</body>
+</html>
